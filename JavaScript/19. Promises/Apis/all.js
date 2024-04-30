@@ -1,21 +1,22 @@
 const p1 = new Promise((resolve, reject) => {
   setTimeout(() => {
-    reject("p1 failure");
+    resolve("p1 success");
   }, 3000);
 });
 
 const p2 = new Promise((resolve, reject) => {
   setTimeout(() => {
-    reject("p2 failure");
+    resolve("p2 success");
   }, 1000);
 });
 
 const p3 = new Promise((resolve, reject) => {
   setTimeout(() => {
-    reject("p3 failure");
+    resolve("p3 success");
   }, 2000);
 });
 
+// Returns a single Promise when all promises are resolved and rejects if any one of them is rejected.
 Promise.all([p1, p2, p3])
   .then((res) => {
     console.log(res);
