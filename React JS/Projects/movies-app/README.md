@@ -34,7 +34,7 @@ git clone https://github.com/harsh-sangwan2003/100-days-web-dev/tree/main/React%
 2. Navigate to the project directory:
 
 ```bash
-cd todo-app
+cd movies-app
 ```
 
 3. Install dependencies and start the development server:
