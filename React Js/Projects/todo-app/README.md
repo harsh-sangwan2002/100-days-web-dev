@@ -22,9 +22,9 @@ Check out the live demo of this app [here](https://harsh-todo-app.vercel.app/).
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/your-username/todo-app.git
-   ```
+```bash
+git clone https://github.com/your-username/todo-app.git
+```
 
 2. Navigate to the project directory:
 
