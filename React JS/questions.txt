@@ -1,0 +1,4 @@
+Q-1 What is diffing algo?
+Q-2 React.Fragment Vs <></> Vs <div>
+Q-3 super in class component
+Q-4 strict vs non-strict mode
