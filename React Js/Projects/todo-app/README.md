@@ -27,10 +27,15 @@ Check out the live demo of this app [here](https://harsh-todo-app.vercel.app/).
    ```
 
 2. Navigate to the project directory:
-cd todo-app
+
+```bash
+   cd todo-app
+   ```
 
 3. Install dependencies and start the development server:
-npm install && npm start
+```bash
+   npm install && start
+   ```
 
 4. Open your browser and navigate to http://localhost:3000 to view the app.
 
