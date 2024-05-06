@@ -1,5 +1,6 @@
 /* Utility Styles  */
-a,i {
+a,
+i {
     cursor: pointer;
 }
 
@@ -68,11 +69,12 @@ a,i {
 }
 
 /* Favourites Styling */
-.favourites-genres, .favourites-table{
-    padding:3rem;
+.favourites-genres,
+.favourites-table {
+    padding: 3rem;
 }
 
-.favourites-table{
+.favourites-table {
     overflow: auto;
 }
 

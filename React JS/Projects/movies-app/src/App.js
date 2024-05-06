@@ -9,7 +9,7 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={[<Banner/>,<Movies/>]}/>
+        <Route path="/" element={[<Banner />, <Movies />]} />
         <Route path="/favourites" element={<Favourites />} />
       </Routes>
     </Router>
