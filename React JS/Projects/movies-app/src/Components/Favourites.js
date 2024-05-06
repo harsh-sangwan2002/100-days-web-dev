@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { movies } from './getMovies'
 
 export default class Favourites extends Component {
 
