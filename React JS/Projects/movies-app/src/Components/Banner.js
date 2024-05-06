@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { movies } from './Movies'
+import { movies } from './getMovies'
 
 export default class Banner extends Component {
 
