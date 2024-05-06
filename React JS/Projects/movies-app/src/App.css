@@ -1,4 +1,9 @@
-/* Banner */
+/* Utility Styles */
+a {
+    cursor: pointer;
+}
+
+/* Banner Styling */
 .banner-card {
     width: 100vw;
     margin-top: 1vh;
@@ -15,84 +20,84 @@
     width: 99.9%;
 }
 
-.banner-title{
+.banner-title {
     position: absolute;
-    top:45vh;
-    left:5vw;
+    top: 45vh;
+    left: 5vw;
 }
 
-.banner-text{
+.banner-text {
     position: absolute;
-    top:55vh;
-    left:5vw;
-    height:4.5rem;
+    top: 55vh;
+    left: 5vw;
+    height: 4.5rem;
     overflow: hidden;
     margin-right: 5vw;
 }
 
-/* Movies List */
-.movies-list{
+/* Movies List Styling*/
+.movies-list {
     display: flex;
     flex-wrap: wrap;
-    padding:1rem;
+    padding: 1rem;
     justify-content: center;
 }
 
-.movies-card{
-    width:20vw;
-    margin:1rem;
-    color:white;
+.movies-card {
+    width: 20vw;
+    margin: 1rem;
+    color: white;
     position: relative;
 }
 
-.movies-title{
+.movies-title {
     position: absolute;
-    top:1rem;
-    left:1rem;
+    top: 1rem;
+    left: 1rem;
 }
 
-.movies-button{
+.movies-button {
     position: absolute;
-    bottom:2rem;
+    bottom: 2rem;
 }
 
-.movies-img{
-    height:40vh;
-    width:20vw;
+.movies-img {
+    height: 40vh;
+    width: 20vw;
     object-fit: cover;
 }
 
 /* Mobile-View styles */
-@media screen and (max-width:400px){
-    
-    .banner-card{
-        height:30vh;
+@media screen and (max-width:400px) {
+
+    .banner-card {
+        height: 30vh;
     }
 
-    .banner-img{
-        height:30vh;
+    .banner-img {
+        height: 30vh;
     }
 
-    .banner-title{
-        top:12vh;
-        left:5vw;
+    .banner-title {
+        top: 12vh;
+        left: 5vw;
     }
 
-    .banner-text{
-        top:17vh;
-        left:5vw;
+    .banner-text {
+        top: 17vh;
+        left: 5vw;
     }
 
-    .movies-card{
-        width:40vw;
-        margin:0.1rem;
+    .movies-card {
+        width: 40vw;
+        margin: 0.1rem;
     }
 
-    .movies-button{
-        width:80%;
+    .movies-button {
+        width: 80%;
     }
 
-    .movies-img{
-        width:40vw;
+    .movies-img {
+        width: 40vw;
     }
 }

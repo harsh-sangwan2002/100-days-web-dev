@@ -1,24 +1,81 @@
+import axios from 'axios';
 import React, { Component } from 'react'
 import { movies } from './getMovies'
 
 export default class Movies extends Component {
 
     constructor() {
+
         super();
         this.state = {
             hover: '',
-            parr:[1],
+            parr: [1],
+            currPage: 1,
+            movies: []
+        }
+    }
+
+    // Life Cycle -> constructor -> render -> didMount() -> render -> didUpdate() -> willUnmount()
+    async componentDidMount() {
+
+        // Side effect such as api calls are handled in this method
+        const res = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=352ab5d55074de8f0d188679577ca0f8&language=en-US&page=${this.state.currPage}`);
+        const data = res.data;
+
+        this.setState({
+            movies: [...data.results]
+        })
+    }
+
+    changeMovies = async () => {
+
+        const res = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=352ab5d55074de8f0d188679577ca0f8&language=en-US&page=${this.state.currPage}`);
+        const data = res.data;
+
+        this.setState({
+            movies: [...data.results]
+        })
+    }
+
+    handleLeft = () => {
+
+        if (this.state.currPage !== 1) {
+            this.setState({
+                currPage: this.state.currPage - 1
+            }, this.changeMovies);
+        }
+    }
+
+    handleRight = () => {
+
+        let tempArr = [];
+
+        // Updating the page number
+        this.state.parr.forEach(page => tempArr.push(page));
+        tempArr.push(this.state.parr.length + 1);
+
+        this.setState({
+            parr: [...tempArr],
+            currPage: this.state.currPage + 1,
+        }, this.changeMovies)
+    }
+
+    handleClick = (value) => {
+
+        if (this.state.currPage !== value) {
+
+            this.setState({
+                currPage: value,
+            }, this.changeMovies)
         }
     }
 
     render() {
 
-        let movie = movies.results;
-
         return (
             <>
                 {
-                    movie === '' ?
+                    this.state.movies === '' ?
                         <div class="spinner-border text-primary" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div> :
@@ -27,15 +84,15 @@ export default class Movies extends Component {
                             <h3 className='text-center'><strong>Trending</strong></h3>
                             <div className='movies-list'>
                                 {
-                                    movie.map(movieObj => (
-                                        <div className="card movies-card" onMouseEnter={() => this.setState({ hover: movieObj.id })} onMouseLeave={() => this.setState({ hover: '' })}>
+                                    this.state.movies.map(movieObj => (
+                                        <div className="card movies-card" key={movieObj.id} onMouseEnter={() => this.setState({ hover: movieObj.id })} onMouseLeave={() => this.setState({ hover: '' })}>
 
                                             <img src={`https://image.tmdb.org/t/p/original${movieObj.backdrop_path}`} style={{ height: '40vh', width: '20vw' }} className="card-img-top movies-img" alt={movieObj.title} />
                                             <h5 className="card-title movies-title">{movieObj.original_title}</h5>
 
                                             <div className='button-wrapper' style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
                                                 {
-                                                    this.state.hover === movieObj.id && <a className='btn btn-primary movies-button'>Add To Favourites</a>
+                                                    this.state.hover === movieObj.id && <a href="#" className='btn btn-primary movies-button'>Add To Favourites</a>
                                                 }
                                             </div>
                                         </div>
@@ -45,14 +102,14 @@ export default class Movies extends Component {
 
                             <div style={{ display: 'flex', justifyContent: 'center' }}>
                                 <nav aria-label="Page navigation example">
-                                    <ul class="pagination">
-                                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                    <ul className="pagination">
+                                        <li className="page-item"><a className="page-link" onClick={this.handleLeft}>Previous</a></li>
                                         {
                                             this.state.parr.map(value => (
-                                                <li class="page-item" key={value}><a class="page-link" href="#">1</a></li>
+                                                <li className="page-item" key={value}><a className="page-link" onClick={()=>this.handleClick(value)}>{value}</a></li>
                                             ))
                                         }
-                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                        <li className="page-item"><a className="page-link" onClick={this.handleRight}>Next</a></li>
                                     </ul>
                                 </nav>
                             </div>
