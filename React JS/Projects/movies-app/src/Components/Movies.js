@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { Component } from 'react'
-import { movies } from './getMovies'
 
 export default class Movies extends Component {
 
@@ -23,7 +22,8 @@ export default class Movies extends Component {
         const data = res.data;
 
         this.setState({
-            movies: [...data.results]
+            movies: [...data.results],
+            favourites: [],
         })
     }
 
@@ -70,6 +70,32 @@ export default class Movies extends Component {
         }
     }
 
+    handleFavourites = (movie) => {
+
+        let oldData = JSON.parse(localStorage.getItem("movies-app") || "[]");
+
+        if (this.state.favourites.includes(movie.id))
+            oldData = oldData.filter(m => m.id !== movie.id)
+
+        else
+            oldData.push(movie);
+
+        console.log(oldData);
+
+        localStorage.setItem("movies-app", JSON.stringify(oldData));
+        this.handleFavouritesState();
+    }
+
+    handleFavouritesState = () => {
+
+        let oldData = JSON.parse(localStorage.getItem("movies-app") || "[]");
+        let temp = oldData.map(movie => movie.id);
+
+        this.setState({
+            favourites: [...temp]
+        })
+    }
+
     render() {
 
         return (
@@ -92,7 +118,7 @@ export default class Movies extends Component {
 
                                             <div className='button-wrapper' style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
                                                 {
-                                                    this.state.hover === movieObj.id && <a href="#" className='btn btn-primary movies-button'>Add To Favourites</a>
+                                                    this.state.hover === movieObj.id && <a className='btn btn-primary movies-button' onClick={() => this.handleFavourites(movieObj)}>{this.state.favourites.includes(movieObj.id) ? "Remove From Favourites" : "Add To Favourites"}</a>
                                                 }
                                             </div>
                                         </div>
@@ -106,7 +132,7 @@ export default class Movies extends Component {
                                         <li className="page-item"><a className="page-link" onClick={this.handleLeft}>Previous</a></li>
                                         {
                                             this.state.parr.map(value => (
-                                                <li className="page-item" key={value}><a className="page-link" onClick={()=>this.handleClick(value)}>{value}</a></li>
+                                                <li className="page-item" key={value}><a className="page-link" onClick={() => this.handleClick(value)}>{value}</a></li>
                                             ))
                                         }
                                         <li className="page-item"><a className="page-link" onClick={this.handleRight}>Next</a></li>
