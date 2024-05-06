@@ -4,7 +4,7 @@ This is a movies app built with React, React Bootstrap, TMDB API, Axios, and Rea
 
 ## Live Demo
 
-Check out the live demo of this app [here](https://your-movies-app.vercel.app/).
+Check out the live demo of this app [here](https://harsh-react-movies-app.vercel.app/).
 
 ## Features
 
