@@ -1,0 +1,91 @@
+/* Global styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #6f00ff;
+    /* Purple shade */
+    background-image: linear-gradient(135deg, #6f00ff, #ff00ff);
+    /* Linear gradient */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Styling */
+.container{
+    display: flex;
+    gap:1rem;
+}
+
+/* Styles for the form container */
+.form-container {
+    background-color: rgba(111, 0, 255, 0.8);
+    /* Blended background color */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+/* Styles for labels */
+.form-container label {
+    color: #fff;
+    /* Text color */
+    font-size: 16px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Styles for input fields */
+.form-container input,
+.form-container input {
+    width: 95%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    /* Border color */
+    margin-bottom: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-container input:focus,
+.form-container input:focus {
+    border-color: #6f00ff;
+    /* Border color on focus */
+}
+
+/* Styles for buttons */
+.form-container button {
+    background-color: #6f00ff;
+    /* Button background color */
+    color: #fff;
+    /* Button text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-container button:hover {
+    background-color: #ff00ff;
+    /* Button background color on hover */
+    transform: scale(1.05);
+}
+
+/* Styles for headings */
+.form-container h1 {
+    color: #fff;
+    /* Heading text color */
+    margin-bottom: 16px;
+    font-size: 24px;
+}
+
+.form-container .buttonWrapper{
+    display: flex;
+    gap:1rem;
+    justify-content: center;
+    align-items: center;
+}
