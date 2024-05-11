@@ -8,7 +8,7 @@ import 'firebase/compat/storage'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBcifek4QmYn9QjHg0xNexv5z_XvCFai-c",
+    apiKey: 'YOUR_API_KEY',
     authDomain: "fir-demo-9444a.firebaseapp.com",
     projectId: "fir-demo-9444a",
     storageBucket: "fir-demo-9444a.appspot.com",
@@ -23,7 +23,7 @@ export const auth = firebase.auth();
 
 const firestore = firebase.firestore();
 export const database = {
-    users:firestore.collection('users')
+    users: firestore.collection('users')
 }
 
 export const storage = firebase.storage();
