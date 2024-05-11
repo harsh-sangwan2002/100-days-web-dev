@@ -1,9 +1,11 @@
 import FireAuth from './Components/FireAuth';
+import FireStore from './Components/FireStore';
 
 function App() {
   return (
     <>
-      <FireAuth />
+      {/* <FireAuth /> */}
+      <FireStore/>
     </>
   );
 }
