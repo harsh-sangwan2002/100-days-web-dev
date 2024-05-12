@@ -1,6 +1,6 @@
 import { createStore } from "redux";
-import BatReducer from "./BatReducer";
+import rootReducer from "./RootReducer";
 
-const store = createStore(BatReducer);
+const store = createStore(rootReducer);
 
 export default store;
