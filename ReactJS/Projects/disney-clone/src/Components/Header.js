@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { auth, provider } from "../firebase";
 
 function Header(props) {
-
   const handleAuth = () => {
     auth
       .signInWithPopup(provider)
