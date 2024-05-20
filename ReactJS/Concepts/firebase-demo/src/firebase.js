@@ -8,7 +8,7 @@ import 'firebase/compat/storage'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: 'YOUR_API_KEY',
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
     authDomain: "fir-demo-9444a.firebaseapp.com",
     projectId: "fir-demo-9444a",
     storageBucket: "fir-demo-9444a.appspot.com",
