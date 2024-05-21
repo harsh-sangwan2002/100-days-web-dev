@@ -10,7 +10,7 @@ import {
   setSignOutState,
 } from "../features/user/userSlice";
 
-function Header(props) {
+const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userName = useSelector(selectUserName);

@@ -1,8 +1,8 @@
 // Import the functions you need from the SDKs you need
-import firebase from 'firebase/compat/app'
-import 'firebase/compat/auth'
-import 'firebase/compat/firestore'
-import 'firebase/compat/storage'
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
+import "firebase/compat/storage";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -27,7 +27,10 @@ const db = firebase.firestore();
 // For google login
 const provider = new firebase.auth.GoogleAuthProvider();
 
-const storage = firebase.storage();
+const firestore = firebase.firestore();
+const database = {
+  movies: firestore.collection("movies"),
+};
 
-export { auth, provider, storage };
+export { auth, provider, database };
 export default db;

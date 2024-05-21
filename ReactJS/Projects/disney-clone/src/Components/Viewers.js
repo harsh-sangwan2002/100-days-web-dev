@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Viewers = (props) => {
+const Viewers = () => {
   const viewers = [
     {
       imgSrc: "/images/viewers-disney.png",
@@ -44,7 +44,7 @@ const Viewers = (props) => {
       ))}
     </Container>
   );
-};
+}
 
 const Container = styled.div`
   margin-top: 30px;

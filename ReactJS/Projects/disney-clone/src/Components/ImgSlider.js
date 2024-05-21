@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import styled from "styled-components";
 
-function ImgSlider(props) {
+const ImgSlider = () => {
   let settings = {
     dots: true,
     infinite: true,
