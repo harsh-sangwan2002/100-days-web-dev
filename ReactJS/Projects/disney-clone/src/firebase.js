@@ -27,10 +27,7 @@ const db = firebase.firestore();
 // For google login
 const provider = new firebase.auth.GoogleAuthProvider();
 
-const firestore = firebase.firestore();
-const database = {
-  movies: firestore.collection("movies"),
-};
+const database = firebase.firestore();
 
 export { auth, provider, database };
 export default db;

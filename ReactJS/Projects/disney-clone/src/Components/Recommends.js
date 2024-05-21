@@ -1,20 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import moviesObj from "../moviesData.json";
-import { database } from "../firebase";
 
 const Recommends = () => {
-  useEffect(() => {
-    (async () => {
-      let movies = moviesObj.movies;
-
-      for (let key in movies) {
-        let res = await database.movies.add(movies[key]);
-        console.log(res);
-      }
-    })();
-  });
 
   return (
     <Container>
