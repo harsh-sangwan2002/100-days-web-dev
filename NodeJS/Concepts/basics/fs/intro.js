@@ -1,7 +1,8 @@
 // file system module
 const fs = require("fs");
+const path = require("path");
 
-const path = "sample.txt";
+let fullPath = path.join(__dirname, 'sample.txt');
 var a = 2, b = 3;
 var c = a + b;
 
@@ -11,7 +12,7 @@ var c = a + b;
 // libuv internally has 4 threads
 
 // This is handed over to the libuv as it is async task and the code will not get blocked
-fs.readFile(path, (err, data) => {
+fs.readFile(fullPath, (err, data) => {
 
     if (err)
         console.log(err);
@@ -19,5 +20,15 @@ fs.readFile(path, (err, data) => {
     else
         console.log(data.toString());
 });
+
+fullPath = path.join(__dirname, 'intro.js');
+fs.readFile(fullPath, (err, data) => {
+
+    if (err)
+        console.log(err);
+
+    else
+        console.log(data.toString());
+})
 
 console.log(c);
