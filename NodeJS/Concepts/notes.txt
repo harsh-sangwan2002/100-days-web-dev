@@ -1,0 +1,5 @@
+Q-1 What is Node.js
+1. It is JS run-time environment.
+2. Node.js provides async (non-blocking i/o).
+3. It is event-driven.
+4. Designed to build scalable network applications.
