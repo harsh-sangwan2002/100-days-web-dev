@@ -9,7 +9,7 @@ import "firebase/compat/storage";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API__KEY,
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "disney-clone-b7200.firebaseapp.com",
   projectId: "disney-clone-b7200",
   storageBucket: "disney-clone-b7200.appspot.com",
