@@ -21,7 +21,7 @@ const Detail = () => {
       .catch((err) => {
         console.log(err);
       });
-  },[id]);
+  }, [id]);
 
   return (
     <Container>
@@ -30,7 +30,7 @@ const Detail = () => {
       </Background>
 
       <ImageTitle>
-      <img src={detailData.titleImg} alt={detailData.title} />
+        <img src={detailData.titleImg} alt={detailData.title} />
       </ImageTitle>
 
       <ContentMeta>
@@ -65,7 +65,7 @@ const Container = styled.div`
   min-height: calc(100vh-250px);
   overflow-x: hidden;
   display: block;
-  top: -30px;
+  top: 72px;
   padding: 0 calc(3.5vw + 5px);
 `;
 
