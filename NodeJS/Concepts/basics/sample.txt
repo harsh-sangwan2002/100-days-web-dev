@@ -1,0 +1,2 @@
+Hello I am Node.js. 
+I am reading a file.
