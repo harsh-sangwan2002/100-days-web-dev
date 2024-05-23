@@ -6,6 +6,8 @@ import db from "../firebase";
 const Detail = () => {
   const { id } = useParams();
   const [detailData, setDetailData] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     db.collection("movies")
@@ -14,14 +16,31 @@ const Detail = () => {
       .then((doc) => {
         if (doc.exists) {
           setDetailData(doc.data());
+          console.log(doc.data().videoSrc);
         } else {
           console.log("No such document in firebase");
         }
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
+        setLoading(false);
       });
   }, [id]);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
+  const getYouTubeEmbedUrl = (url) => {
+    const urlObj = new URL(url);
+    const videoId = urlObj.searchParams.get("v");
+    return `https://www.youtube.com/embed/${videoId}`;
+  };
+
+  if (loading) {
+    return <Loader>Loading...</Loader>;
+  }
 
   return (
     <Container>
@@ -39,7 +58,7 @@ const Detail = () => {
             <img src="/images/play-icon-black.png" alt="" />
             <span>Play</span>
           </Player>
-          <Trailer>
+          <Trailer onClick={toggleModal}>
             <img src="/images/play-icon-white.png" alt="" />
             <span>Trailer</span>
           </Trailer>
@@ -56,17 +75,37 @@ const Detail = () => {
         <SubTitle>{detailData.subtitle}</SubTitle>
         <Description>{detailData.description}</Description>
       </ContentMeta>
+
+      {isModalOpen && (
+        <ModalOverlay>
+          <ModalContent>
+            <CloseButton onClick={toggleModal}>X</CloseButton>
+            <iframe
+              width="100%"
+              height="100%"
+              src={getYouTubeEmbedUrl(detailData.videoSrc)}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="YouTube video player"
+            ></iframe>
+          </ModalContent>
+        </ModalOverlay>
+      )}
     </Container>
   );
 };
 
 const Container = styled.div`
   position: relative;
-  min-height: calc(100vh-250px);
+  min-height: calc(100vh - 250px);
   overflow-x: hidden;
   display: block;
-  top: 72px;
+  top: 20px;
   padding: 0 calc(3.5vw + 5px);
+
+  @media screen and (max-width:1200px) {
+    top:calc(20vh);
+  }
 `;
 
 const Background = styled.div`
@@ -80,9 +119,11 @@ const Background = styled.div`
   img {
     width: 100vw;
     height: 100vh;
+    background: none  no-repeat center center/cover;
 
     @media (max-width: 768px) {
       width: initial;
+      object-fit: contain;
     }
   }
 `;
@@ -130,7 +171,7 @@ const Player = styled.button`
   letter-spacing: 1.8px;
   text-align: center;
   text-transform: uppercase;
-  background: rgb (249, 249, 249);
+  background: rgb(249, 249, 249);
   border: none;
   color: rgb(0, 0, 0);
 
@@ -230,6 +271,65 @@ const Description = styled.div`
 
   @media (max-width: 768px) {
     font-size: 14px;
+  }
+`;
+
+const Loader = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #ffffff;
+`;
+
+const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+`;
+
+const ModalContent = styled.div`
+  position: relative;
+  background-color: #000;
+  padding: 0;
+  border-radius: 10px;
+  width: 560px;
+  height: 315px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    height: auto;
+
+    iframe {
+      width: 100%;
+      height: auto;
+    }
+  }
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+
+  &:hover {
+    color: #ff0000;
   }
 `;
 
