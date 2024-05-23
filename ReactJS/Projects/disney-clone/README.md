@@ -6,6 +6,8 @@ This is a Disney Clone app built with React.js, Firebase, Styled Components, and
 
 Check out the live demo of this app [here](https://disney-clone-b7200.web.app/).
 
+<img src ="/img.webp">
+
 ## Features
 
 - Login with Google
