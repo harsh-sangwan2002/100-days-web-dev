@@ -1,0 +1,6 @@
+Benefits ->
+1. Code is simple
+2. Improves code readability
+3. More secure
+4. Fast
+5. Easy to write logic
