@@ -7,9 +7,10 @@ const server = http.createServer((req, res) => {
 
     let path = "./views";
     let contentType = 'text/html';
+    res.statusCode = 200;
 
     if (req.url.endsWith('.css')) {
-        
+
         contentType = 'text/css';
         path = "./views" + req.url;
 
@@ -18,11 +19,20 @@ const server = http.createServer((req, res) => {
             case "/":
                 path += "/index.html";
                 break;
+
             case "/about":
                 path += "/about.html";
                 break;
+
+            case "/about-me":
+                res.statusCode = 301;
+                res.setHeader('Location', '/about');
+                res.end();
+                break;
+
             default:
                 path += "/404.html";
+                res.statusCode = 404;
                 break;
         }
     }
@@ -32,8 +42,10 @@ const server = http.createServer((req, res) => {
         if (err)
             console.log(err)
 
-        else
-            res.end(data)
+        else {
+            res.setHeader('Content-Type', contentType);
+            res.end(data);
+        }
     })
 
 })
