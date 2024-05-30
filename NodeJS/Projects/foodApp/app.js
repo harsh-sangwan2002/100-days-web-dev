@@ -1,9 +1,9 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
-const emailValidator = require('email-validator');
+dotenv.config();
 
+const userModel = require('./models/userModel');
 
 const app = express();
 // Everything in express is done through middlewares
@@ -11,9 +11,6 @@ const app = express();
 // This is a global middleware
 app.use(express.json());
 
-dotenv.config();
-
-const db_link = process.env.DB_LINK;
 
 const authRouter = express.Router();
 
@@ -83,46 +80,7 @@ async function deleteUser(req, res) {
     })
 }
 
-mongoose.connect(db_link).then((db) => {
-    console.log("DB connected");
-}).catch(err => {
-    console.log(err);
-})
 
-const userSchema = mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-        validate: function () {
-            return emailValidator.validate(this.email);
-        }
-    },
-    password: {
-        type: String,
-        required: true,
-        min: 8
-    },
-    confirmPassword: {
-        type: String,
-        required: true,
-        min: 8,
-        validate: function () {
-            return this.confirmPassword === this.password;
-        }
-    }
-})
-
-// Define the hooks brefore the userModel creation
-userSchema.pre('save', function () {
-    this.confirmPassword = undefined
-})
-
-const userModel = mongoose.model('userModel', userSchema);
 
 app.listen(3000, () => {
 
