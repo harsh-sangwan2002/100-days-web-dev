@@ -1,13 +1,19 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+
 const emailValidator = require('email-validator');
 
-const db_link = "mongodb+srv://harsh:Samay229@cluster0.oymn2pz.mongodb.net/food-app"
+
 const app = express();
 // Everything in express is done through middlewares
 
 // This is a global middleware
 app.use(express.json());
+
+dotenv.config();
+
+const db_link = process.env.DB_LINK;
 
 const authRouter = express.Router();
 
