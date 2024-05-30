@@ -10,7 +10,10 @@ let users = [
     { id: 3, name: 'Naman' },
 ]
 
+// Base route
 app.use('/user', userRouter);
+
+// This is called mounting. Here we don't have to create sepearate routes for each request (get,post,patch and delete)
 userRouter.route('/')
     .get(getUser)
     .post(postUser)
