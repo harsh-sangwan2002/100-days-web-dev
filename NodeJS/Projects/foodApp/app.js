@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const cookieParser = require('cookie-parser');
 
 dotenv.config();
 
@@ -10,17 +11,45 @@ const app = express();
 
 // This is a global middleware
 app.use(express.json());
-
+app.use(cookieParser());
 
 const authRouter = express.Router();
+const userRouter = express.Router();
 
 app.use('/auth', authRouter);
+app.use('/user', userRouter);
+
 authRouter.route('/signup')
     .get(getSignUp)
     .post(postSignUp)
     .patch(updateUser)
     .delete(deleteUser);
 
+userRouter.route('/getCookies')
+    .get(getCookies)
+
+userRouter.route('/setCookies')
+    .get(setCookies)
+
+function getCookies(req, res) {
+
+    let cookies = req.cookies;
+    console.log(cookies);
+    res.send("Cookies sent");
+}
+
+function setCookies(req, res) {
+
+    // res.setHeader('Set-Cookie', "isLoggedIn=true");
+
+    // httOnly -> frontend cannot access the cookie
+    res.cookie('isLoggedIn', true, { maxAge: 1000 * 60 * 60 * 24, secure: true, httpOnly: true });
+
+    // this cookie can be accessed on frontend
+    res.cookie('isPrimeMember', true);
+
+    res.send("Cookies has been set.");
+}
 // req/res params are carried forward to the next middleware
 function middleware1(req, res, next) {
 
