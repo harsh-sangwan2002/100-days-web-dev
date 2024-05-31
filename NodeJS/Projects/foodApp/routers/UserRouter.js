@@ -1,6 +1,7 @@
 const express = require('express');
 
 const userModel = require('../models/userModel');
+const privateRoute = require('./AuthHelper');
 const userRouter = express.Router();
 
 userRouter.route('/getCookies')
@@ -8,6 +9,24 @@ userRouter.route('/getCookies')
 
 userRouter.route('/setCookies')
     .get(setCookies)
+
+userRouter.route('/')
+    .get(privateRoute, getUsers);
+
+
+
+async function getUsers(req, res) {
+
+    let users = await userModel.find();
+
+    if (users)
+        return res.json(users);
+
+    else
+        return res.json({
+            message: "users not found"
+        })
+}
 
 async function updateUser(req, res) {
 

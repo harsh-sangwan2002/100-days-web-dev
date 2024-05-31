@@ -1,4 +1,5 @@
 const express = require('express');
+const jwt = require('jsonwebtoken');
 
 const userModel = require('../models/userModel');
 const authRouter = express.Router();
@@ -22,16 +23,23 @@ async function loginUser(req, res) {
 
         if (user) {
 
-            if (user.password == password)
+            if (user.password == password) {
+
+                let uid = user['_id'];
+                let token = jwt.sign({payload:uid},process.env.SECRET_KEY);
+                res.cookie('login', token, { httpOnly: true });
+
                 res.json({
                     message: "Logged in successfully.",
                     user
                 })
+            }
 
-            else
+            else {
                 res.json({
                     message: "Wrong credentials"
                 })
+            }
         }
 
         else {
