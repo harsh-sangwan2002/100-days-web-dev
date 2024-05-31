@@ -6,8 +6,8 @@ dotenv.config();
 
 const app = express();
 
-const userRouter = require('./routers/UserRouter');
-const authRouter = require('./routers/AuthRouter');
+const userRouter = require('./routers/userRouter');
+const authRouter = require('./routers/authRouter');
 
 // This is a global middleware
 app.use(express.json());
