@@ -1,6 +1,6 @@
 # Disney Clone
 
-This is a Disney Clone app built with React.js, Firebase, Styled Components, and Redux. It allows you to browse Disney content, view details, and manage your favorite shows and movies.
+Crafted a Disney Clone website with React.js, Firebase, Styled Components, and Redux, achieving a faster loading speed and an impressive 0.01 CLS score.
 
 ## Live Demo
 
