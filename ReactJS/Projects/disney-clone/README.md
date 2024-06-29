@@ -31,7 +31,7 @@ Check out the live demo of this app [here](https://disney-clone-b7200.web.app/).
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/harsh-sangwan2003/100-days-web-dev/tree/main/React%20JS/Projects/disney-clone.git
+git clone https://github.com/harsh-sangwan2003/100-days-web-dev/tree/main/ReactJS/Projects/disney-clone
 ```
 
 2. Navigate to the project directory:
