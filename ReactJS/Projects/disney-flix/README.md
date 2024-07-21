@@ -1,6 +1,6 @@
 # Disney Flix
 
-Engineered a Disney Clone website with React.js, Firebase, Styled Components, and Redux, achieving a faster loading speed and an impressive 0.01 CLS score.
+- Engineered a Disney Clone website with React.js, Firebase, Styled Components, and Redux, achieving a faster loading speed and an impressive 0.01 CLS score.
 
 ## Live Demo
 
