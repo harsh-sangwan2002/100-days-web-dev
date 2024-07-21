@@ -1,0 +1,19 @@
+Q-1 What is the difference b/w react component, component instance & react element
+Sol - The JSX gets converted to React.createElement function calls.
+The return value of a React Component is an Object.
+
+• React Component: A function or class that optionally takes inputs (props) and returns a React element.
+• Component Instance: A single occurrence of a component in the UI, maintaining its own state and lifecycle.
+• React Element: A plain object representing what to render, created by invoking a component.
+
+Q-2 React reconciliation
+Sol - • React creates a tree of elements. React keeps this tree of elements in the memory, known as the virtual dom.
+• Next thing is to sync the "Virtual DOM" to the "Real DOM".
+• React compares the old & the new tree & it finds the smallest no. of operations to transform one tree to the other.
+• This is handled by Diffing Algo.
+Reconciliation is the process by which React updates the DOM to match the state of the components efficiently. It involves rendering, diffing, and updating steps to apply minimal and optimized changes. 
+Using keys and the virtual DOM, React ensures fast and smooth updates, enhancing performance and simplifying the development process.
+
+Q-3 Diffing Algo assumptions.
+Sol - 1. Two different elements will produce two different trees.
+2. Each child element will have a unique key prop.
