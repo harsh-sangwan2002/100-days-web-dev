@@ -1,6 +1,6 @@
-# Disney Clone
+# Disney Flix
 
-Crafted a Disney Clone website with React.js, Firebase, Styled Components, and Redux, achieving a faster loading speed and an impressive 0.01 CLS score.
+Engineered a Disney Clone website with React.js, Firebase, Styled Components, and Redux, achieving a faster loading speed and an impressive 0.01 CLS score.
 
 ## Live Demo
 
@@ -8,23 +8,23 @@ Check out the live demo of this app [here](https://disney-clone-b7200.web.app/).
 
 <img src ="./img.webp">
 
-## Features
+## Description
 
-- Login with Google
-- View movie details (title, overview, release date, rating, etc.)
-- Discover popular movies
-- Responsive design with Styled Components
+- Designed a full-stack web application, Disney Flix, improving load speed by 40% and achieving a 0.01 CLS score for enhanced user experience.
+
+- Crafted an engaging and responsive user interface using React and Redux, enhancing the movie trailer viewing experience.
+
+- Integrated Firebase for authentication, real-time database, and hosting, ensuring seamless and secure user interactions.
 
 ## Technologies Used
 
-- React
-- Styled Components
+- React JS
 - Redux-Toolkit
 - React-Redux
-- Firebase
 - React Router DOM
+- Firebase
+- Styled Components
 
-## Usage
 
 ### Clone and Run
 
