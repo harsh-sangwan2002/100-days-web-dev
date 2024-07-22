@@ -1,6 +1,6 @@
-# Disney Flix
+# Disney+ Clone
 
-- Engineered Disney Flix website with React.js, Firebase, Styled Components, and Redux, achieving a faster loading speed and an impressive 0.01 CLS score.
+- Engineered Disney+ Clone website with React.js, Firebase, Styled Components, and Redux, achieving a faster loading speed and an impressive 0.01 CLS score.
 
 ## Live Demo
 
@@ -10,7 +10,7 @@ Check out the live demo of this app [here](https://disney-clone-b7200.web.app/).
 
 ## Description
 
-- Designed a full-stack web application, Disney Flix, improving load speed by 40% and achieving a 0.01 CLS score for enhanced user experience.
+- Designed a full-stack Disney+ Clone, improving load speed by 40% and achieving a 0.01 CLS score for enhanced user experience.
 
 - Crafted an engaging and responsive user interface using React and Redux, enhancing the movie trailer viewing experience.
 
@@ -31,7 +31,7 @@ Check out the live demo of this app [here](https://disney-clone-b7200.web.app/).
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/harsh-sangwan2003/100-days-web-dev/tree/main/ReactJS/Projects/disney-flix
+git clone https://github.com/harsh-sangwan2003/100-days-web-dev/tree/main/ReactJS/Projects/disney-clone
 ```
 
 2. Navigate to the project directory:
