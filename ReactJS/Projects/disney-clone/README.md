@@ -1,6 +1,6 @@
 # Disney+ Clone
 
-- Engineered Disney+ Clone website with React.js, Firebase, Styled Components, and Redux, achieving a faster loading speed and an impressive 0.01 CLS score.
+- Engineered a Full-stack web application, optimizing page load times to achieve an average First Contentful Paint (FCP) of less than 500 milliseconds, enhancing user experience.
 
 ## Live Demo
 
