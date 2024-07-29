@@ -1,8 +1,8 @@
 # Disney+ Clone
 
-Engineered a full-stack web application to provide users with a seamless streaming experience.
-Integrated Firebase for user authentication and real-time database functionality, securely managing user profiles and watchlists.
-Optimized performance, achieving a 40% improvement in load speed and a 0.01 CLS score for enhanced user experience.
+- Engineered a full-stack web application to provide users with a seamless streaming experience.
+- Integrated Firebase for user authentication and real-time database functionality, securely managing user profiles and watchlists.
+- Optimized performance, achieving a 40% improvement in load speed and a 0.01 CLS score for enhanced user experience.
 
 ## Live Demo
 
