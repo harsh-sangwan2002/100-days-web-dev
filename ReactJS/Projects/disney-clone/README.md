@@ -1,20 +1,14 @@
 # Disney+ Clone
 
-- Engineered a Full-stack web application, optimizing page load times to achieve an average First Contentful Paint (FCP) of less than 500 milliseconds, enhancing user experience.
+• Engineered a full-stack web application to provide users with a seamless streaming experience.
+• Integrated Firebase for user authentication and real-time database functionality, securely managing user profiles and watchlists.
+• Optimized performance, achieving a 40% improvement in load speed and a 0.01 CLS score for enhanced user experience.
 
 ## Live Demo
 
 Check out the live demo of this app [here](https://disney-clone-b7200.web.app/).
 
 <img src ="./img.webp">
-
-## Description
-
-- Designed a full-stack Disney+ Clone, improving load speed by 40% and achieving a 0.01 CLS score for enhanced user experience.
-
-- Crafted an engaging and responsive user interface using React and Redux, enhancing the movie trailer viewing experience.
-
-- Integrated Firebase for authentication, real-time database, and hosting, ensuring seamless and secure user interactions.
 
 ## Technologies Used
 
